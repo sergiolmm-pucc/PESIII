@@ -1,4 +1,6 @@
+
 name: Exemplo da aula de PEDIII - by Slmm
+
 on: [push]
 defaults:
   run:
@@ -11,7 +13,14 @@ jobs:
      - run: echo "${{ github.event_name}} evento disparado para esse job "
      - run: echo " O sistemas ${{ runner.os }} esta rodadndo"
      - run: timedatectl
-     
+
+     - name: Teste variaveis
+       env:
+        VAR1: this is
+        VAR2: teste
+       run: |
+        echo $VAR1 $VAR2 
+      
   Mostrando_o_repositorio:
     name: Segundo Job
     runs-on: windows-latest
@@ -24,9 +33,11 @@ jobs:
   Mostrando_o_repositorio_mac_os:
     name: Terceiro Job
     runs-on: macos-latest
+    
     steps:
      - run: echo "Repo-name ${{ github.repository}}"
      - run: echo "Repo-branch ${{ github.ref }}"
      - run: echo " O sistemas ${{ runner.os }} esta rodadndo"
      - run: date
      - run: time
+   
