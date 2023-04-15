@@ -28,4 +28,5 @@ jobs:
      - run: echo "Repo-name ${{ github.repository}}"
      - run: echo "Repo-branch ${{ github.ref }}"
      - run: echo " O sistemas ${{ runner.os }} esta rodadndo"
-     - run: timedatectl
+     - run: date
+     - run: time
