@@ -10,7 +10,7 @@ jobs:
      
   Mostrando_o_repositorio:
     name: Segundo Job
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
      - run: echo "Repo-name ${{ github.repository}}"
      - run: echo "Repo-branch ${{ github.ref }}"
