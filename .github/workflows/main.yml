@@ -5,4 +5,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
      - run: echo "${{ github.event_name}} evento disparado para esse job "
+     - run: echo " O sistemas ${{ runner.os }} esta rodadndo"
+     - run: echo timedatectl
      
+  Mostrando_o_repositorio:
+    name: Segundo Job
+    runs-on: ubuntu-18.04
+    steps:
+     - run: echo "Repo-name ${{ github.repository}}"
+     - run: echo "Repo-branch ${{ github.ref }}"
+     - run: echo " O sistemas ${{ runner.os }} esta rodadndo"
+     - run: timedatectl
