@@ -1,5 +1,9 @@
 name: Exemplo da aula de PEDIII - by Slmm
 on: [push]
+defaults:
+  run:
+    shell: bash
+      
 jobs:
   Descobrindo-o-github-actions-workflow:
     runs-on: ubuntu-latest
@@ -10,9 +14,9 @@ jobs:
      
   Mostrando_o_repositorio:
     name: Segundo Job
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
      - run: echo "Repo-name ${{ github.repository}}"
      - run: echo "Repo-branch ${{ github.ref }}"
      - run: echo " O sistemas ${{ runner.os }} esta rodadndo"
-     - run: timedatectl
+     - run: echo time
