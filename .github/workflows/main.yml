@@ -10,7 +10,7 @@ jobs:
     steps:
      - run: echo "${{ github.event_name}} evento disparado para esse job "
      - run: echo " O sistemas ${{ runner.os }} esta rodadndo"
-     - run: echo timedatectl
+     - run: timedatectl
      
   Mostrando_o_repositorio:
     name: Segundo Job
@@ -19,4 +19,13 @@ jobs:
      - run: echo "Repo-name ${{ github.repository}}"
      - run: echo "Repo-branch ${{ github.ref }}"
      - run: echo " O sistemas ${{ runner.os }} esta rodadndo"
-     - run: echo time
+     - run: time
+     
+  Mostrando_o_repositorio_mac_os:
+    name: Terceiro Job
+    runs-on: macos-latest
+    steps:
+     - run: echo "Repo-name ${{ github.repository}}"
+     - run: echo "Repo-branch ${{ github.ref }}"
+     - run: echo " O sistemas ${{ runner.os }} esta rodadndo"
+     - run: timedatectl
