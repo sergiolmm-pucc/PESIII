@@ -2,15 +2,14 @@
 name: Exemplo da aula de PEDIII - by Slmm
 
 on: [push]
-defaults:
-  run:
-    shell: bash
+#defaults:
+#  run:
+#    shell: bash
       
 jobs:
   Descobrindo-o-github-actions-workflow:
     runs-on: ubuntu-latest
     steps:
-     
      - run: echo "${{ github.event_name}} evento disparado para esse job "
      - run: echo " O sistemas ${{ runner.os }} esta rodadndo"
      - run: timedatectl
@@ -21,8 +20,6 @@ jobs:
      - run: |
         echo  ls -la ${{github.workspace }}
     
-
-
      - name: Teste variaveis
        env:
         VAR1: this is
