@@ -21,18 +21,7 @@ jobs:
         VAR2: teste
        run: |
         echo $VAR1 $VAR2 
-     - name: Checkout git repository 
-       uses: actions/checkout@v3   
-     - run: |
-        echo  ls -la ${{github.workspace }}
-     - name: Ja clonado     
-         
-     - run: echo "Clone o diretorio ${{github.repository }}"
-     - run: echo "Listando arquivos"
-     - name: Arquivos no diretorio
-        run:| 
-          ls -la ${{github.workspace }}
-     - run: echo "Staus do job  ${{job.status}}" 
+  
      
 
 #  Mostrando_o_repositorio:
