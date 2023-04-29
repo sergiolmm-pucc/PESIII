@@ -18,7 +18,7 @@ jobs:
      - name: Checkout git repository 
        uses: actions/checkout@v3   
      - run: |
-        echo  ls -la ${{github.workspace }}
+        echo  ls ${{ github.workspace }}
     
      - name: Teste variaveis
        env:
