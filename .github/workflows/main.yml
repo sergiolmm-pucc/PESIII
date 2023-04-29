@@ -20,24 +20,33 @@ jobs:
         VAR2: teste
        run: |
         echo $VAR1 $VAR2 
-      
-  Mostrando_o_repositorio:
-    name: Segundo Job
-    runs-on: windows-latest
-    steps:
-     - run: echo "Repo-name ${{ github.repository}}"
-     - run: echo "Repo-branch ${{ github.ref }}"
-     - run: echo " O sistemas ${{ runner.os }} esta rodadndo"
-     - run: time
+     - name: Checkout git repository 
+        uses; actions/checkout@v3
+     - run: echo "Clone o diretorio ${{github.repository }}"
+     - run: echo "Listando arquivos"
+     - name: Arquivos no diretorio
+        run:| 
+          ls -la ${{github.workspace }}
+     - run: echo "Staus do job  ${{job.status}}" 
      
-  Mostrando_o_repositorio_mac_os:
-    name: Terceiro Job
-    runs-on: macos-latest
+
+#  Mostrando_o_repositorio:
+#    name: Segundo Job
+#    runs-on: windows-latest
+#    steps:
+#     - run: echo "Repo-name ${{ github.repository}}"
+#     - run: echo "Repo-branch ${{ github.ref }}"
+#     - run: echo " O sistemas ${{ runner.os }} esta rodadndo"
+#     - run: time
+#     
+#  Mostrando_o_repositorio_mac_os:
+#    name: Terceiro Job
+##    runs-on: macos-latest
     
-    steps:
-     - run: echo "Repo-name ${{ github.repository}}"
-     - run: echo "Repo-branch ${{ github.ref }}"
-     - run: echo " O sistemas ${{ runner.os }} esta rodadndo"
-     - run: date
-     - run: time
+#    steps:
+#     - run: echo "Repo-name ${{ github.repository}}"
+#     - run: echo "Repo-branch ${{ github.ref }}"
+#     - run: echo " O sistemas ${{ runner.os }} esta rodadndo"
+#     - run: date
+#     - run: time
    
