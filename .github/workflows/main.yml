@@ -15,6 +15,22 @@ jobs:
      - run: echo " O sistemas ${{ runner.os }} esta rodadndo"
      - run: timedatectl
 
+
+     - name: Checkout git repository 
+       uses: actions/checkout@v3   
+     - run: |
+        echo  ls -la ${{github.workspace }}
+     - name: Ja clonado     
+         
+     - run: echo "Clone o diretorio ${{github.repository }}"
+     - run: echo "Listando arquivos"
+     - name: Arquivos no diretorio
+        run:| 
+          ls -la ${{github.workspace }}
+     - run: echo "Staus do job  ${{job.status}}" 
+
+
+
      - name: Teste variaveis
        env:
         VAR1: this is
