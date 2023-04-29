@@ -10,6 +10,7 @@ jobs:
   Descobrindo-o-github-actions-workflow:
     runs-on: ubuntu-latest
     steps:
+     - uses: actions/checkout@v3
      - run: echo "${{ github.event_name}} evento disparado para esse job "
      - run: echo " O sistemas ${{ runner.os }} esta rodadndo"
      - run: timedatectl
@@ -21,7 +22,7 @@ jobs:
        run: |
         echo $VAR1 $VAR2 
      - name: Checkout git repository 
-         uses:actions/checkout@v3
+         
      - name: Ja clonado     
          
      - run: echo "Clone o diretorio ${{github.repository }}"
