@@ -43,7 +43,7 @@ jobs:
 #     
 #  Mostrando_o_repositorio_mac_os:
 #    name: Terceiro Job
-##    runs-on: macos-latest
+#    runs-on: macos-latest
     
 #    steps:
 #     - run: echo "Repo-name ${{ github.repository}}"
