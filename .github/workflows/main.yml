@@ -21,7 +21,7 @@ jobs:
        run: |
         echo $VAR1 $VAR2 
      - name: Checkout git repository 
-     - uses: actions/checkout@v3
+       uses: actions/checkout@v3
      - name: Ja clonado     
          
      - run: echo "Clone o diretorio ${{github.repository }}"
