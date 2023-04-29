@@ -13,12 +13,12 @@ jobs:
      - run: echo "${{ github.event_name}} evento disparado para esse job "
      - run: echo " O sistemas ${{ runner.os }} esta rodadndo"
      - run: timedatectl
-
+     - run: ls -la       
 
      - name: Checkout git repository 
        uses: actions/checkout@v3   
      - run: |
-        echo  ls ${{ github.workspace }}
+        ls -la ${{ github.workspace }}
     
      - name: Teste variaveis
        env:
