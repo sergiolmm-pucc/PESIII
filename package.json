@@ -1,0 +1,28 @@
+{
+  "name": "pesiii",
+  "version": "1.0.0",
+  "description": "Aula CI\\CD para Processo de Engenharia de Software III",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --ci --reportes=default --reporters=jest-Junit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sergiolmm-pucc/PESIII.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sergiolmm-pucc/PESIII/issues"
+  },
+  "homepage": "https://github.com/sergiolmm-pucc/PESIII#readme",
+  "dependencies": {
+    "jest": "^29.5.0",
+    "jest-junit": "^16.0.0"
+  },
+  "jest-junit": {
+    "outputDirectory": "reports",
+    "outputName": "jest-junit.xml"
+  }
+}
