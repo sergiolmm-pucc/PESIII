@@ -28,6 +28,7 @@ jobs:
         echo $VAR1 $VAR2 
   
   Executando_teste:
+      permissions: write-all
       runs-on: ubuntu-latest
       
       strategy:
