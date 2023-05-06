@@ -4,7 +4,7 @@
   "description": "Aula CI\\CD para Processo de Engenharia de Software III",
   "main": "index.js",
   "scripts": {
-    "test": "jest --ci --reportes=default --reporters=jest-Junit"
+    "test": "jest --ci --reportes=default --reporters=jest-junit"
   },
   "repository": {
     "type": "git",
