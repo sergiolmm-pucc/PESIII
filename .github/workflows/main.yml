@@ -45,7 +45,7 @@ jobs:
          - run: npm test
          - name: Teste Report
            uses: dorny/test-reporter@v1
-           if: sucess() || failure()  # roda de qualquer maneira
+           if: success() || failure()  # roda de qualquer maneira
            with:
             name: JEST tests
             path: reports/jest-*.xml
