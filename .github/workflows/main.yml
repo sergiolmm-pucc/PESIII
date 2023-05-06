@@ -43,7 +43,14 @@ jobs:
          - run: npm ci
          - run: npm run build --if-present
          - run: npm test
-         
+         - name: Teste Report
+           uses: dorny/test-reporter@v1
+           if: sucess() || failure()  # roda de qualquer maneira
+           with:
+            name: JEST tests
+            path: reports/jest-*.xml
+            reporter: jest-junit
+            
            
 
 #  Mostrando_o_repositorio:
