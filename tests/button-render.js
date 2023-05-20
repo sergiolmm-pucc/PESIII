@@ -32,7 +32,7 @@ const screen = { width: 1024, height: 720};
 
     } finally{
         console.log("Saindo");
-        await driver.quit();
+       // await driver.quit();
     }
 
 } 
