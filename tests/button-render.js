@@ -21,10 +21,10 @@ const screen = { width: 1024, height: 720};
         await driver.get('http://localhost:3000/ht');
         console.log("obteve a pagina");
         
-        let btn = await driver.findElement(By.id('sendbutton'));
-        console.log("btn");
-        console.log(btn.isDisplayed());
-        let didSendButtonRender = btn.isDisplayed();
+        let didSendButtonRender = await driver.findElement(By.id('sendbutton')).isDisplayed();
+        //console.log("btn");
+        //console.log(btn.isDisplayed());
+        //let didSendButtonRender = btn.isDisplayed();
         if (!didSendButtonRender){
             throw new Error('Send button not render properly');
         }
