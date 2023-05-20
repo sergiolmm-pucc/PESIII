@@ -23,6 +23,7 @@ const screen = { width: 1024, height: 720};
         
         let btn = await driver.findElement(By.id('sendbutton'));
         console.log("btn");
+        console.log(btn.isDisplayed());
         let didSendButtonRender = btn.isDisplayed();
         if (!didSendButtonRender){
             throw new Error('Send button not render properly');
