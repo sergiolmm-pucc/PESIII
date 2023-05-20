@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --ci --reportes=default --reporters=jest-junit",
-    "start": "node index.js"
+    "start": "node index.js",
+    "test1": "node tests/button-render.js",
+    "e2e-test": "start-server-and-test http://localhost:3000/ht test1s"
+
   },
   "repository": {
     "url": "https://glitch.com/edit/#!/glitch-mvp-node"
@@ -36,5 +39,9 @@
   },
   "engines": {
     "node": "14.x"
+  },
+  "devDependencies": {
+    "selenium-webdriver": "^4.9.2",
+    "start-server-and-test": "^2.0.0"
   }
 }
