@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grupo 1 - Markup</title>
+</head>
+
+<body>
+  <div class="form-container">
+    <form method="GET" class="form-markup">
+      <label for="valorCompra">Valor de compra:</label>
+      <input type="text" name="valorCompra">
+
+      <label for="valorVenda">Valor de venda: </label>
+      <input type="text" name="valorVenda">
+
+      <input type="submit" value="Calcular">
+
+    </form>
+    <p class="result"></p>
+  </div>
+
+  <script>
+    let form = document.querySelector(".form-markup");
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      let valorCompra = form.elements.valorCompra.value;
+      let valorVenda = form.elements.valorVenda.value;
+      let valorDeMarkup = ((valorVenda - valorCompra) / 100) * 100;
+
+      document.querySelector(".result").innerHTML = `Valor de markup: ${valorDeMarkup}%`
+
+    });
+  </script>
+
+</body>
+
+</html>
