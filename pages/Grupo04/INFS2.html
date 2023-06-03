@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cálculo de Impostos - NF de serviço</title>
+</head>
+<style>
+    label{
+        color: red;
+        text-transform: uppercase;
+    }
+    input{
+        outline: 0;
+        height: 30px;
+        border-radius: 5px;
+    }
+    button{
+        color: white;
+        background-color: black;
+        height: 35px;
+        border-radius: 4px;
+    }
+</style>
+<body>
+  <h1>Cálculo de Impostos de NF de serviço</h1>
+  <form id="calculoImpostosForm">
+    <label for="valorDoServico">Valor do Servico:</label>
+    <input type="text" id="valorDoServico" step="0.01">
+    <button type="button" onclick="calculoDeImposto()">Calcular</button>
+  </form>
+  <h2>Resultado:</h2>
+  <div id="resultadoDoImpostos"></div>
+  <div id="resultado"></div>
+
+  <script>
+    function calculoDeImposto() {
+      var valorServico = parseFloat(document.getElementById("valorDoServico").value);
+
+      var cpp = valorServico * 0.28; 
+      var iss = valorServico * 0.05; 
+      var pis = valorServico * 0.0065; 
+      var csll = valorServico * 0.015; 
+      var irpj = valorServico * 0.08; 
+      var cofins = valorServico * 0.03; 
+      
+      var totalImpostos = cpp + iss + pis + csll + irpj + cofins;
+     
+      var resultadoDiv = document.getElementById("resultadoDoImpostos");
+      resultadoDiv.innerHTML = `
+        <p>CPP: R$ ${cpp.toFixed(2)}</p>
+        <p>ISS: R$ ${iss.toFixed(2)}</p>
+        <p>PIS: R$ ${pis.toFixed(2)}</p>
+        <p>CSLL: R$ ${csll.toFixed(2)}</p>
+        <p>IRPJ: R$ ${irpj.toFixed(2)}</p>
+        <p>COFINS: R$ ${cofins.toFixed(2)}</p>
+        <p>Total de Impostos: R$ ${totalImpostos.toFixed(2)}</p>
+      `;
+    }
+
+  </script>
+  
+</body>
+</html>
