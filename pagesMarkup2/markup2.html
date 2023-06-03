@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" src="index.css" />
+  </head>
+  <body>
+    <h1>Cálculo de Preço de Venda</h1>
+
+    <form id="calculoForm">
+      <label for="custo">Custo:</label>
+      <input type="number" id="custo" name="custo" required />
+
+      <label for="markup">Markup (%):</label>
+      <input type="number" id="markup" name="markup" required />
+
+      <button type="submit" class="button">Calcular</button>
+    </form>
+
+    <div id="resultado"></div>
+
+    <script>
+      const form = document.getElementById("calculoForm");
+      const resultadoDiv = document.getElementById("resultado");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const custo = document.getElementById("custo").value;
+        const markup = document.getElementById("markup").value;
+
+        const data = {
+          custo: parseFloat(custo),
+          markup: parseFloat(markup),
+        };
+
+        fetch("/MKP2", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            const precoVenda = data.precoVenda;
+            resultadoDiv.textContent = `Preço de venda: R$ ${precoVenda.toFixed(
+              2
+            )}`;
+          })
+          .catch((error) => {
+            console.error(error);
+            resultadoDiv.textContent = "Erro ao calcular o preço de venda.";
+          });
+      });
+    </script>
+  </body>
+</html>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+  }
+
+  h1 {
+    text-align: center;
+    margin-top: 0;
+    color: blue;
+  }
+
+  label {
+    display: block;
+    font-weight: bold;
+  }
+
+  input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  button {
+    display: block;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: blue;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #2c69ed;
+  }
+
+  button:active {
+    background-color: blue;
+    transform: translateY(2px);
+  }
+</style>
