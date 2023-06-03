@@ -1,0 +1,252 @@
+<html>
+    <head>
+        <title>PESIII</title>
+        <meta charset="UTF-8">
+        <script src="controller\multiply.controller.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="css/index.css">
+    </head>
+    <style>
+        body{
+  background-color: #333333 ;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  min-height: 100vh;
+
+}
+.info{
+  color: white;
+  margin-left: 10px;
+}
+#calculo { 
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 430px;
+  padding-bottom: 5px;
+  margin: 10px
+}
+#calculo:focus{
+    outline: none;
+    border-color: #4CAF50;
+}
+
+#calculo::placeholder{
+    text-align: center;
+}
+    </style>
+    <body>
+      <div class="info-maior">
+        <div class="info">
+          <input id="Calculo" placeholder="Digite o valor que deseja calcular" type="number">
+        
+          <div id="results" >
+            <button id="sendbutton" style="background-color:  #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; margin: 10px" value="teste" onClick="nfServico()">Click</button>
+            <p id="resultado" color = "white"></p>
+          </div>
+      </div>
+    </body>
+    <script>
+        let arquivo = "PESIII-main/weapp/index.html";
+
+function nfServico(){
+
+  var valorBruto = document.querySelector("#calculo").value; 
+  var cpp = 0;
+  var iss = 0;
+  var pis = 0;
+  var csll = 0;
+  var irpj = 0;
+  var cofins = 0;
+  var aliquotaTotal = 0;
+
+  if(valorBruto == ""){
+    alert("digite um numero");
+  }
+
+  if (valorBruto >= 0 && valorBruto <= 180000) {
+    cpp = 4.00 / 100;
+    iss = 2.01 / 100;
+    pis = 0.00 / 100;
+    csll = 0.00 / 100;
+    irpj = 0.00 / 100;
+    cofins = 0.00 / 100;
+    aliquotaTotal = (cpp + iss + csll + irpj + cofins);
+  } else if (valorBruto > 180000 && valorBruto <= 360000) {
+    cpp = 4.00 / 100;
+    iss = 2.79 / 100;
+    pis = 0.00 / 100;
+    csll = 0.00 / 100;
+    irpj = 0.00 / 100;
+    cofins = 1.42 / 100;
+    aliquotaTotal = (cpp + iss + csll + irpj + cofins) ;
+  } else if (valorBruto > 360000 && valorBruto <= 540000) {
+    cpp = 4.07 / 100;
+    iss = 3.50 / 100;
+    pis = 0.35 / 100;
+    csll = 0.43 / 100;
+    irpj = 0.48 / 100;
+    cofins = 1.43 / 100;
+    aliquotaTotal = (cpp + iss + csll + irpj + cofins);
+  } else if (valorBruto > 540000 && valorBruto <= 720000) {
+    cpp = 4.47 / 100;
+    iss = 3.84 / 100;
+    pis = 0.38 / 100;
+    csll = 0.53 / 100;
+    irpj = 0.53 / 100;
+    cofins = 1.56 / 100;
+    aliquotaTotal = (cpp + iss + csll + irpj + cofins);
+  } else if (valorBruto > 720000 && valorBruto <= 900000) {
+    cpp = 4.52 / 100;
+    iss = 3.87 / 100;
+    pis = 0.38 / 100;
+    csll = 0.52 / 100;
+    irpj = 0.53 / 100;
+    cofins = 1.58 / 100;
+    aliquotaTotal = (cpp + iss + csll + irpj + cofins);
+  } else if (valorBruto > 900000 && valorBruto <= 1080000) {
+    cpp = 4.92 / 100;
+    iss = 4.23 / 100;
+    pis = 0.40 / 100;
+    csll = 0.57 / 100;
+    irpj = 0.57 / 100;
+    cofins = 1.73 / 100;
+    aliquotaTotal = (cpp + iss + csll + irpj + cofins);
+  } else if (valorBruto > 1080000 && valorBruto <= 1260000) {
+    cpp = 4.97 / 100;
+    iss = 4.26 / 100;
+    pis = 0.42 / 100;
+    csll = 0.56 / 100;
+    irpj = 0.59 / 100;
+    cofins = 1.74 / 100;
+    aliquotaTotal = (cpp + iss + csll + irpj + cofins);
+  } else if (valorBruto > 1260000 && valorBruto <= 1440000) {
+    cpp = 5.03 / 100;
+    iss = 4.31 / 100;
+    pis = 0.51 / 100;
+    csll = 0.59 / 100;
+    irpj = 0.59 / 100;
+    cofins = 1.76 / 100;
+    aliquotaTotal = (cpp + iss + csll + irpj + cofins);
+  } else if (valorBruto > 1440000 && valorBruto <= 1620000) {
+    cpp = 5.10 / 100;
+    iss = 4.37 / 100;
+    pis = 0.51 / 100;
+    csll = 0.59 / 100;
+    irpj = 0.63 / 100;
+    cofins = 1.88 / 100;
+    aliquotaTotal = (cpp + iss + csll + irpj + cofins);
+  } else if (valorBruto > 1620000 && valorBruto <= 1800000) {
+    cpp = 5.20 / 100;
+    iss = 4.45 / 100;
+    pis = 0.56 / 100;
+    csll = 0.61 / 100;
+    irpj = 0.63 / 100;
+    cofins = 1.89 / 100;
+    aliquotaTotal = (cpp + iss + csll + irpj + cofins);
+  } else if (valorBruto > 1800000 && valorBruto <= 1980000) {
+    cpp = 5.25 / 100;
+    iss = 4.48 / 100;
+    pis = 0.56 / 100;
+    csll = 0.64 / 100;
+    irpj = 0.63 / 100;
+    cofins = 2.07 / 100;
+    aliquotaTotal = (cpp + iss + csll + irpj + cofins);
+  } else if (valorBruto > 1980000 && valorBruto <= 2160000) {
+    cpp = 5.31 / 100;
+    iss = 4.54 / 100;
+    pis = 0.57 / 100;
+    csll = 0.69 / 100;
+    irpj = 0.69 / 100;
+    cofins = 2.09 / 100;
+    aliquotaTotal = (cpp + iss + csll + irpj + cofins);
+  } else if (valorBruto > 2160000 && valorBruto <= 2340000) {
+    cpp = 5.38 / 100;
+    iss = 4.60 / 100;
+    pis = 0.57 / 100;
+    csll = 0.69 / 100;
+    irpj = 0.69 / 100;
+    cofins = 2.10 / 100;
+    aliquotaTotal = (cpp + iss + csll + irpj + cofins);
+  } else if (valorBruto > 2340000 && valorBruto <= 2520000) {
+    cpp = 5.44 / 100;
+    iss = 4.65 / 100;
+    pis = 0.57 / 100;
+    csll = 0.70 / 100;
+    irpj = 0.71 / 100;
+    cofins = 2.13 / 100;
+    aliquotaTotal = (cpp + iss + csll + irpj + cofins);
+  } else if (valorBruto > 2520000 && valorBruto <= 2700000) {
+    cpp = 5.50 / 100;
+    iss = 4.71 / 100;
+    pis = 0.57 / 100;
+    csll = 0.70 / 100;
+    irpj = 0.71 / 100;
+    cofins = 2.15 / 100;
+    aliquotaTotal = (cpp + iss + csll + irpj + cofins);
+  } else if (valorBruto > 2700000 && valorBruto <= 2880000) {
+    cpp = 5.56 / 100;
+    iss = 4.76 / 100;
+    pis = 0.57 / 100;
+    csll = 0.70 / 100;
+    irpj = 0.72 / 100;
+    cofins = 2.34 / 100;
+    aliquotaTotal = (cpp + iss + csll + irpj + cofins);
+  } else if (valorBruto > 2880000 && valorBruto <= 3060000) {
+    cpp = 5.62 / 100;
+    iss = 4.82 / 100;
+    pis = 0.57 / 100;
+    csll = 0.76 / 100;
+    irpj = 0.78 / 100;
+    cofins = 2.36 / 100;
+    aliquotaTotal = (cpp + iss + csll + irpj + cofins);
+  } else if (valorBruto > 3060000 && valorBruto <= 3240000) {
+    cpp = 5.68 / 100;
+    iss = 4.87 / 100;
+    pis = 0.57 / 100;
+    csll = 0.78 / 100;
+    irpj = 0.78 / 100;
+    cofins = 2.37 / 100;
+    aliquotaTotal = (cpp + iss + csll + irpj + cofins);
+  } else if (valorBruto > 3240000 && valorBruto <= 3420000) {
+    cpp = 5.74 / 100;
+    iss = 4.93 / 100;
+    pis = 0.57 / 100;
+    csll = 0.79 / 100;
+    irpj = 0.80 / 100;
+    cofins = 2.40 / 100;
+    aliquotaTotal = (cpp + iss + csll + irpj + cofins);
+  } else if (valorBruto > 3420000 && valorBruto <= 3600000) {
+    cpp = 5.80 / 100;
+    iss = 4.98 / 100;
+    pis = 0.57 / 100;
+    csll = 0.79 / 100;
+    irpj = 0.80 / 100;
+    cofins = 2.42 / 100;
+    aliquotaTotal = (cpp + iss + csll + irpj + cofins) ;
+  }
+      total = valorBruto / (1 - aliquotaTotal);
+
+      var display = [
+        `...CPP: ${cpp*100} %`,
+        `...ISS: ${iss*100} %`,
+        `...PIS: ${pis*100} %`,
+        `...CSLL: ${csll*100} %`,
+        `...IRPJ: ${irpj*100} %`,
+        `...COFINS: ${cofins*100} %`,
+        `...O total: ${parseInt(total)} com base no ${parseInt(valorBruto)} e a aliquota total ${aliquotaTotal*100}%`
+      ];
+      
+      var resultadoElement = document.getElementById("resultado");
+      resultadoElement.innerHTML = '';
+      
+      display.forEach(function(item) {
+        resultadoElement.innerHTML += item + "<br>";
+      });
+      
+}
+  
+    </script>
+
+</html>
