@@ -23,8 +23,9 @@ server.get('/MKP2', (req, res) => {
     res.sendFile('./pagesMarkup2/markup2.html', { root: __dirname });
   });
 
+server.get('/INFS', (req, res) => res.sendFile('./pages/Grupo05/INFS.html', { root: __dirname } ))
+  
 server.get('/INFS2', (req, res) => res.sendFile('./pages/Grupo04/INFS2.html', { root: __dirname } ))
-
 
 server.post('/MKP2', (req, res) => {
     const custo = req.body.custo;
