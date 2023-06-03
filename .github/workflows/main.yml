@@ -70,7 +70,7 @@ jobs:
       - name: Use node.js 19.x
         uses: actions/setup-node@v3
         with:
-          node-version: 19.x
+          node-version: 18.x
 
       - run: npm ci
       - name: Run end to end tests
