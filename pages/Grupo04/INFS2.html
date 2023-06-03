@@ -36,12 +36,12 @@
     function calculoDeImposto() {
       var valorServico = parseFloat(document.getElementById("valorDoServico").value);
 
-      var cpp = valorDoServico * 0.28; 
-      var iss = valorDoServico * 0.05; 
-      var pis = valorDoServico * 0.0065; 
-      var csll = valorDoServico * 0.015; 
-      var irpj = valorDoServico * 0.08; 
-      var cofins = valorDoServico * 0.03; 
+      var cpp = valorServico * 0.28; 
+      var iss = valorServico * 0.05; 
+      var pis = valorServico * 0.0065; 
+      var csll = valorServico * 0.015; 
+      var irpj = valorServico * 0.08; 
+      var cofins = valorServico * 0.03; 
       
       var totalImpostos = cpp + iss + pis + csll + irpj + cofins;
 
