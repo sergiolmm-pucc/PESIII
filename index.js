@@ -19,6 +19,8 @@ server.get('/ht',(req,res) => res.sendFile(INDEX, {root: __dirname } ) );
 
 server.get('/MKP', (req, res) => res.sendFile('./pages/markup.html', { root: __dirname } ))
 
+server.get('/INFS', (req, res) => res.sendFile('./pages/Grupo05/INFS.html', { root: __dirname } ))
+
 server.get('/INFS2', (req, res) => res.sendFile('./pages/Grupo04/INFS2.html', { root: __dirname } ))
 
 server.get('/NFVP', (req, res) => res.sendFile('./pages/NF_Venda_Produto.html', { root: __dirname } ))
