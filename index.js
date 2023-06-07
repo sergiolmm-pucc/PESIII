@@ -15,9 +15,11 @@ server.get('/', function(req,res){
     res.send("Site de tecnologia");
 });
 
-server.get('/ht',(req,res) => res.sendFile(INDEX, {root: __dirname } ) );
+server.get('/ht',(req,res) => res.sendFile(INDEX, {root: __dirname } ));
 
-server.get('/MKP', (req, res) => res.sendFile('./pages/markup.html', { root: __dirname } ))
+server.get('/MKP', (req, res) => {
+    res.sendFile('./pages/Grupo01/markup.html', { root: __dirname } )
+})
 
 server.get('/INFS', (req, res) => res.sendFile('./pages/Grupo05/INFS.html', { root: __dirname } ))
 
