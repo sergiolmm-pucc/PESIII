@@ -1,4 +1,5 @@
-var express = require('express');
+const express = require('express');
+const path = require("path");
 const bodyParser = require('body-parser');
 
 const PORT = process.env.PORT || 3000;
@@ -7,6 +8,7 @@ const INDEX = '/index.html';
 
 const server = express()
 server.use(bodyParser.json());
+server.use(express.static(path.join(__dirname, 'pages')))
 
 
 server.listen(PORT, () => console.log(`Escutando em ${PORT}`));
