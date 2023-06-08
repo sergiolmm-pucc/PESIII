@@ -4,8 +4,8 @@
   "description": "Aula CI\\CD para Processo de Engenharia de Software III",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "test2": "jest --ci --reportes=default --reporters=jest-junit",
+    "test": "jest --ci --reportes=default --reporters=jest-junit",
+    "test2": "jest",
     "start": "node index.js",
     "test1": "node tests/button-render.js",
     "e2e-test": "start-server-and-test http://localhost:3000/ht test1"
