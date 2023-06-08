@@ -1,5 +1,5 @@
 const { JSDOM } = require("jsdom");
-const calcularImposto = require("..../pages/Grupo02/calcularImposto");
+const calcularImposto = require("../pages/Grupo02/calcularImposto");
 
 // Cria uma instância do JSDOM para simular o ambiente do navegador
 const dom = new JSDOM();
