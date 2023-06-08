@@ -4,7 +4,8 @@
   "description": "Aula CI\\CD para Processo de Engenharia de Software III",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --ci --reportes=default --reporters=jest-junit",
+    "test:local": "jest",
     "start": "node index.js",
     "test1": "node tests/button-render.js",
     "e2e-test": "start-server-and-test http://localhost:3000/ht test1"
@@ -42,6 +43,7 @@
   "devDependencies": {
     "jest": "^29.5.0",
     "selenium-webdriver": "^4.9.2",
-    "start-server-and-test": "^2.0.0"
+    "start-server-and-test": "^2.0.0",
+    "supertest": "^6.3.3"
   }
 }
