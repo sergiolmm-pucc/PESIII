@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="2" failures="0" errors="0" time="0.453">
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2023-05-06T01:06:58" time="0.347" tests="2">
-    <testcase classname=" Passando um parametro só" name=" Passando um parametro só" time="0.001">
+<testsuites name="jest tests" tests="5" failures="0" errors="0" time="4.069">
+  <testsuite name="multiply.test.js" errors="0" failures="0" skipped="0" timestamp="2023-06-08T19:01:44" time="2.969" tests="2">
+    <testcase classname="" name="Passando um parametro só" time="0.006">
     </testcase>
-    <testcase classname="" name="Passando dois numeros" time="0.001">
+    <testcase classname="" name="Passando dois numeros" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="tests\grupo1-markup.test.js" errors="0" failures="0" skipped="0" timestamp="2023-06-08T19:01:44" time="3.007" tests="3">
+    <testcase classname="" name="Teste função grupo 1 de calculo de Markup (1000, 100)" time="0.006">
+    </testcase>
+    <testcase classname="" name="Teste função grupo 1 de calculo de Markup (850, 100)" time="0.001">
+    </testcase>
+    <testcase classname="" name="Teste função grupo 1 de calculo de Markup (950, 10)" time="0.002">
     </testcase>
   </testsuite>
 </testsuites>
