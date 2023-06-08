@@ -40,7 +40,7 @@
     "titleTemplate": "{title}"
   },
   "engines": {
-    "node": "14.x"
+    "node": "18.x"
   },
   "devDependencies": {
     "jest": "^29.5.0",
