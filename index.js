@@ -23,15 +23,12 @@ server.get('/MKP', (req, res) => {
     res.sendFile('./pages/Grupo01/markup.html', { root: __dirname } )
 })
 
-<<<<<<< HEAD
+
 server.get('/INFS', (req, res) => res.sendFile('./pages/Grupo05/INFS.html', { root: __dirname } ))
-=======
-<<<<<<< HEAD
+
 server.get('/NFVP', (req, res) => res.sendFile('./pages/NF_Venda_Produto.html', { root: __dirname }))
-=======
+
 server.get('/NFVP', (req, res) => res.sendFile('./pages/Grupo02/NF_Venda_Produto.html', { root: __dirname } ))
->>>>>>> nf_venda_produto
->>>>>>> cfbaa91c670bc327392e18251ecc2049d5d806a8
 
 server.get('/INFS2', (req, res) => res.sendFile('./pages/Grupo04/INFS2.html', { root: __dirname } ))
 
