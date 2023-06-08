@@ -1,8 +1,9 @@
+const { describe } = require('node:test');
 const { JSDOM } = require("jsdom");
 const calcularImposto = require("../pages/Grupo02/calcularImposto");
 
-// Cria uma instância do JSDOM para simular o ambiente do navegador
-const dom = new JSDOM();
+// Cria uma instância do JSDOM com uma string HTML vazia
+const dom = new JSDOM('<!DOCTYPE html><html><body></body></html>');
 global.document = dom.window.document;
 
 // Teste da função calcularImposto
