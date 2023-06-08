@@ -23,17 +23,18 @@
     <p class="result"></p>
   </div>
 
+  <script src="/Grupo01/markup.js"></script>
   <script>
     let form = document.querySelector(".form-markup");
 
     form.addEventListener("submit", (event) => {
-      event.preventDefault();
+        event.preventDefault();
 
-      let valorCompra = form.elements.valorCompra.value;
-      let valorVenda = form.elements.valorVenda.value;
-      let valorDeMarkup = ((valorVenda - valorCompra) / 100) * 100;
+        let valorCompra = form.elements.valorCompra.value;
+        let valorVenda = form.elements.valorVenda.value;
+        let valorDeMarkup = calculaMarkup(valorCompra, valorVenda)
 
-      document.querySelector(".result").innerHTML = `Valor de markup: ${valorDeMarkup}%`
+        document.querySelector(".result").innerHTML = `Valor de markup: ${valorDeMarkup}%`
 
     });
   </script>
