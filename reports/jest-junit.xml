@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="10" failures="0" errors="0" time="4.598">
-  <testsuite name="multiply.test.js" errors="0" failures="0" skipped="0" timestamp="2023-06-09T12:57:56" time="2.28" tests="2">
-    <testcase classname="" name="Passando um parametro só" time="0.012">
-    </testcase>
-    <testcase classname="" name="Passando dois numeros" time="0.002">
-    </testcase>
-  </testsuite>
-  <testsuite name="tests\grupo1-markup.test.js" errors="0" failures="0" skipped="0" timestamp="2023-06-09T12:57:56" time="2.317" tests="3">
-    <testcase classname="" name="Teste função grupo 1 de calculo de Markup (1000, 100)" time="0.009">
+<testsuites name="jest tests" tests="10" failures="0" errors="0" time="5.669">
+  <testsuite name="tests\grupo1-markup.test.js" errors="0" failures="0" skipped="0" timestamp="2023-06-09T23:24:12" time="2.599" tests="3">
+    <testcase classname="" name="Teste função grupo 1 de calculo de Markup (1000, 100)" time="0.008">
     </testcase>
     <testcase classname="" name="Teste função grupo 1 de calculo de Markup (850, 100)" time="0.001">
     </testcase>
-    <testcase classname="" name="Teste função grupo 1 de calculo de Markup (950, 10)" time="0.001">
+    <testcase classname="" name="Teste função grupo 1 de calculo de Markup (950, 10)" time="0.002">
     </testcase>
   </testsuite>
-  <testsuite name="tests\calculoDeImposto.test.js" errors="0" failures="0" skipped="0" timestamp="2023-06-09T12:57:58" time="0.731" tests="2">
-    <testcase classname="" name="O Calculo de imposto estao corretos" time="0.011">
+  <testsuite name="multiply.test.js" errors="0" failures="0" skipped="0" timestamp="2023-06-09T23:24:12" time="2.588" tests="2">
+    <testcase classname="" name="Passando um parametro só" time="0.007">
     </testcase>
-    <testcase classname="" name="O total de impostos esta correto" time="0.002">
+    <testcase classname="" name="Passando dois numeros" time="0.001">
     </testcase>
   </testsuite>
-  <testsuite name="tests\markup2.test.js" errors="0" failures="0" skipped="0" timestamp="2023-06-09T12:57:56" time="3.671" tests="3">
-    <testcase classname="POST - MKP2" name="should not be possible to make the calc without cost" time="0.099">
+  <testsuite name="tests\calculoDeImposto.test.js" errors="0" failures="0" skipped="0" timestamp="2023-06-09T23:24:14" time="0.48" tests="2">
+    <testcase classname="" name="O Calculo de imposto estao corretos" time="0.008">
     </testcase>
-    <testcase classname="POST - MKP2" name="should not be possible to make the calc without markup" time="0.012">
+    <testcase classname="" name="O total de impostos esta correto" time="0.001">
     </testcase>
-    <testcase classname="POST - MKP2" name="should be possible to make the calc" time="0.008">
+  </testsuite>
+  <testsuite name="tests\markup2.test.js" errors="0" failures="0" skipped="0" timestamp="2023-06-09T23:24:12" time="4.228" tests="3">
+    <testcase classname="POST - MKP2" name="should not be possible to make the calc without cost" time="0.132">
+    </testcase>
+    <testcase classname="POST - MKP2" name="should not be possible to make the calc without markup" time="0.02">
+    </testcase>
+    <testcase classname="POST - MKP2" name="should be possible to make the calc" time="0.015">
     </testcase>
   </testsuite>
 </testsuites>
