@@ -7,7 +7,6 @@ function calcularImposto(valorServico) {
     var cofins = valorServico * 0.03; 
     
     var totalImpostos = cpp + iss + pis + csll + irpj + cofins;
-   
     return {
       cpp: cpp.toFixed(2),
       iss: iss.toFixed(2),
