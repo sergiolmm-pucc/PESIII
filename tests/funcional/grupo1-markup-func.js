@@ -1,6 +1,6 @@
 const { Builder, By, Key, until } = require('selenium-webdriver');
 
-test('Teste funcional 01 grupo 1', async () => {
+(async () => {
   // Inicialização do WebDriver com opção headless
   const driver = await new Builder()
     .forBrowser('chrome')
@@ -29,14 +29,18 @@ test('Teste funcional 01 grupo 1', async () => {
     const resultado2 = await driver.findElement(By.css('.result2')).getText();
 
     // Verificação do resultado
-    expect(resultado).toBe('O preço de venda deve ser de R$ 220');
-    expect(resultado2).toBe('O valor de markup é 1.1');
+    if (resultado === 'O preço de venda deve ser de R$ 220'
+      && resultado2 === 'O valor de markup é 1.1') {
+        console.log('Passou')
+    }
+    else {
+      console.log('Não passou');
+    }
 
-    console.log('Teste funcional bem-sucedido!');
   } catch (error) {
     console.error('Teste funcional falhou:', error);
   } finally {
     // Encerramento do WebDriver
     await driver.quit();
   }
-});
+})();

@@ -7,7 +7,8 @@
     "test": "jest --ci --reportes=default --reporters=jest-junit",
     "test:local": "jest",
     "start": "node index.js",
-    "test1": "node tests/button-render.js",
+    "test1": "node tests/funcional/button-render.js",
+    "test2": "node tests/funcional/grupo1-markup-func.js",
     "e2e-test": "start-server-and-test http://localhost:3000/ht test1"
   },
   "repository": {
