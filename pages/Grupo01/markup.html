@@ -9,32 +9,45 @@
 </head>
 
 <body>
-  <div class="form-container">
-    <form method="GET" class="form-markup">
-      <label for="valorCompra">Valor de compra:</label>
+  <div class="form-container" style="width: 25%; margin: 0 auto;">
+    <form method="GET" class="form-markup" style="display: flex; flex-direction: column; gap: 10px;">
+
+      <label for="valorCompra">Valor de custo do seu produto:</label>
       <input type="text" name="valorCompra">
 
-      <label for="valorVenda">Valor de venda: </label>
-      <input type="text" name="valorVenda">
+      <label for="tributosCompra">Impostos em R$:</label>
+      <input type="number" name="tributosCompra">
+
+      <label for="freteCompra">Frete em R$:</label>
+      <input type="number" name="freteCompra">
+
+      <label for="percentualLucroDesejado">Digite o percentual de lucro desejado: </label>
+      <input type="text" name="percentualLucroDesejado">
 
       <input type="submit" value="Calcular">
 
     </form>
     <p class="result"></p>
+    <p class="result2"></p>
   </div>
 
   <script src="/Grupo01/markup.js"></script>
   <script>
+    // import calculaMarkup from "/Grupo01/markup.js";
+
     let form = document.querySelector(".form-markup");
 
     form.addEventListener("submit", (event) => {
-        event.preventDefault();
+      event.preventDefault();
 
-        let valorCompra = form.elements.valorCompra.value;
-        let valorVenda = form.elements.valorVenda.value;
-        let valorDeMarkup = calculaMarkup(valorCompra, valorVenda)
+      let valorCompra = form.elements.valorCompra.value;
+      let tributosCompra = form.elements.tributosCompra.value;
+      let freteCompra = form.elements.freteCompra.value;
+      let percentualLucroDesejado = form.elements.percentualLucroDesejado.value;
+      let obj = calculaMarkup(valorCompra, tributosCompra, freteCompra, percentualLucroDesejado)
 
-        document.querySelector(".result").innerHTML = `Valor de markup: ${valorDeMarkup}%`
+      document.querySelector(".result").innerHTML = `O preço de venda deve ser de R$ ${obj.valorVenda}`
+      document.querySelector(".result2").innerHTML = `O valor de markup é ${obj.markup}`
 
     });
   </script>

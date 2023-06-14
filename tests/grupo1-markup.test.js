@@ -1,19 +1,19 @@
-const calculaMarkup = require('../pages/Grupo01/markup')
+const calculaMarkup = require('../pages/Grupo01/markup');
 
-test('Teste função grupo 1 de calculo de Markup (1000, 100)', () => {
-    const res = calculaMarkup(1000, 100)
+test('Teste função grupo 1 de calculo de Markup (100, 50, 50, 10)', () => {
+  const res = calculaMarkup(100, 50, 50, 10);
 
-    expect(res).toBe(900)
-})
+  expect(res).toStrictEqual({ markup: 1.1, valorVenda: 220 });
+});
 
-test('Teste função grupo 1 de calculo de Markup (850, 100)', () => {
-    const res = calculaMarkup(850, 100)
+test('Teste função grupo 1 de calculo de Markup (200, 100, 100, 20)', () => {
+  const res = calculaMarkup(200, 100, 100, 20);
 
-    expect(res).toBe(750)
-})
+  expect(res).toStrictEqual({ markup: 1.2, valorVenda: 480 });
+});
 
-test('Teste função grupo 1 de calculo de Markup (950, 10)', () => {
-    const res = calculaMarkup(850, 10)
+test('Teste função grupo 1 de calculo de Markup (1000, 50, 20 ,35)', () => {
+  const res = calculaMarkup(1000, 50, 20, 35);
 
-    expect(res).toBe(840)
-})
+  expect(res).toStrictEqual({ markup: 1.35, valorVenda: 1444.5 });
+});
