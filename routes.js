@@ -1,4 +1,5 @@
-const express = require("express")
+const express = require("express");
+const calcMarkup = require("./pagesMarkup2/markup2");
 const routes = express.Router();
 const INDEX = '/index.html';
 
@@ -29,7 +30,7 @@ routes.post('/MKP2', (req, res) => {
     if (!custo || !markup) {
         return res.status(400).json({ error: 'Custo e markup são obrigatórios' });
     }
-    const precoVenda = custo * (1 + markup / 100);
+    const precoVenda = calcMarkup(custo, markup);
     res.json({ precoVenda });
 });
 
