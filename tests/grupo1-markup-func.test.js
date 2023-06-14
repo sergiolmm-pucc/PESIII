@@ -1,8 +1,11 @@
 const { Builder, By, Key, until } = require('selenium-webdriver');
 
 test('Teste funcional 01 grupo 1', async () => {
-  // Inicialização do WebDriver
-  const driver = await new Builder().forBrowser('chrome').build();
+  // Inicialização do WebDriver com opção headless
+  const driver = await new Builder()
+    .forBrowser('chrome')
+    .setChromeOptions(['--headless'])
+    .build();
 
   try {
     // Navegação para a página HTML
