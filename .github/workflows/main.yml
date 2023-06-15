@@ -74,7 +74,7 @@ jobs:
 
       - run: npm ci
       - name: Run end to end tests
-        run: npm run e2e-test
+        run: npm run test2
       - name: diretorio
         run: pwd
       - name: lista  
@@ -87,6 +87,19 @@ jobs:
           # Path to the release files          Gravar as fotos na raiz do projeto no docker
           path: /home/runner/work/PESIII/PESIII/*.png
 
+      - name: fotos da tela 1
+        uses: actions/upload-artifact@v3
+        with:
+          name: Fotos dos testes
+          # Path to the release files          Gravar as fotos na raiz do projeto no docker
+          path: /home/runner/work/PESIII/PESIII/tests/funcional/*.png
+
+      - name: fotos da tela 2
+        uses: actions/upload-artifact@v3
+        with:
+          name: Fotos dos testes
+          # Path to the release files          Gravar as fotos na raiz do projeto no docker
+          path: /home/runner/work/PESIII/PESIII/tests/*.png
 
 
 
