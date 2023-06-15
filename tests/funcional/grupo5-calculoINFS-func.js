@@ -14,11 +14,11 @@ const { Builder, By, until } = require('selenium-webdriver');
     .setChromeOptions(options)
     .build();
 
-  await driver.manage().setTimeouts({ pageLoad: 300000 });
+  await driver.manage().setTimeouts({ pageLoad: 600000 });
 
-  try {
-    await driver.get('https://billowy-flowery-cousin.glitch.me/INFS');
-    await driver.sleep(3000);
+try {
+  await driver.get('https://billowy-flowery-cousin.glitch.me/INFS');
+  await driver.sleep(3000);
 
     await driver.takeScreenshot().then((image, err) => {
       require('fs').writeFile('inicio_grupo5.png', image, 'base64', function(err) {
