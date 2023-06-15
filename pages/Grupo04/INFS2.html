@@ -24,16 +24,16 @@
   <h1>Cálculo de Impostos de NF de serviço</h1>
   <form id="calculoImpostosForm">
     <label for="valorDoServico">Valor do Servico:</label>
-    <input type="text" id="valorDoServico" step="0.01">
-    <button type="button" onclick="calculoDeImposto()">Calcular</button>
+    <input type="text" id="valorDoServicoInput" step="0.01">
+    <button id="btnCalc" type="button" onclick="calculoDeImposto()">Calcular</button>
   </form>
   <h2>Resultado:</h2>
   <div id="resultadoDoImpostos"></div>
-  <div id="resultado"></div>
+  <!-- <div id="resultado"></div> -->
 
   <script>
     function calculoDeImposto() {
-      var valorServico = parseFloat(document.getElementById("valorDoServico").value);
+      var valorServico = parseFloat(document.getElementById("valorDoServicoInput").value);
 
       var cpp = valorServico * 0.28; 
       var iss = valorServico * 0.05; 
