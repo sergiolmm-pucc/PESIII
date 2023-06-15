@@ -1,10 +1,21 @@
+const chrome = require('selenium-webdriver/chrome');
+const webdriver = require('selenium-webdriver');
 const { Builder, By, Key, until } = require('selenium-webdriver');
 
+const screen = { width: 1024, height: 720};
+
 (async () => {
+
+  console.log("Iniciando");
+
+  var capabilities = webdriver.Capabilities.chrome();
+  capabilities.set('chromeOptions', {'args': ['--no-sandbox']});
+
   // Inicialização do WebDriver com opção headless
   const driver = await new Builder()
     .forBrowser('chrome')
-    .setChromeOptions(['--headless'])
+    .withCapabilities(capabilities)
+    .setChromeOptions( new chrome.Options().headless().windowSize(screen))
     .build();
 
   try {
