@@ -37,6 +37,18 @@ const { Builder, By, Key, until } = require('selenium-webdriver');
       console.log('Não passou');
     }
 
+    await driver.sleep(5000)
+    driver.takeScreenshot()
+      .then((image, err) => {
+        require('fs').writeFileSync('fim_grupo1.png', image, 'base64', (err) => {
+          console.log(err)
+        })
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+
+
   } catch (error) {
     console.error('Teste funcional falhou:', error);
   } finally {
