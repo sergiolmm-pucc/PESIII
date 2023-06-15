@@ -88,7 +88,7 @@ jobs:
           path: /home/runner/work/PESIII/PESIII/*.png
 
       - name: lista  
-        run: cd test
+        run: cd tests
       - name: lista  
         run: ls -la
       - name: lista  
