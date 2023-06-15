@@ -48,6 +48,7 @@ const { Builder, By, Key, until } = require('selenium-webdriver');
         console.log(err)
       })
 
+      
 
   } catch (error) {
     console.error('Teste funcional falhou:', error);
