@@ -29,8 +29,6 @@ const screen = { width: 1024, height: 720};
             throw new Error('Send button not render properly');
         }
 
-
-
     } finally{
         console.log("Saindo");
        // await driver.quit();
