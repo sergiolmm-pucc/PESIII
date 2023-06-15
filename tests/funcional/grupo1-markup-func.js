@@ -9,8 +9,10 @@ const { Builder, By, Key, until } = require('selenium-webdriver');
 
   try {
     // Navegação para a página HTML
-    await driver.get('http://localhost:3000/MKP');
-
+    await driver.get('https://billowy-flowery-cousin.glitch.me/MKP');
+    
+    await driver.sleep(45000)
+	  
     driver.takeScreenshot().then(
             function(image, err) {
               require('fs').writeFile('inicio14.png', image, 'base64', function(err) {
