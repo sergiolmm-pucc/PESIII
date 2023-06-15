@@ -75,7 +75,17 @@ jobs:
       - run: npm ci
       - name: Run end to end tests
         run: npm run e2e-test
-
+      - name: diretorio
+        run: pwd
+      - name: lista  
+        run: ls -la
+        
+      - name: fotos da tela
+        uses: actions/upload-artifact@v3
+        with:
+          name: Fotos dos testes
+          # Path to the release files          Gravar as fotos na raiz do projeto no docker
+          path: /home/runner/work/GCSIC/GCSIC/*.png
 
 
 
