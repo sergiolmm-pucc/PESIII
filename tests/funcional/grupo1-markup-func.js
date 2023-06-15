@@ -1,18 +1,12 @@
-const process = require('process');
 const webdriver = require('selenium-webdriver');
-const {until} = require('selenium-webdriver');
 const chrome = require('selenium-webdriver/chrome');
-const firefox = require('selenium-webdriver/firefox');
+const { Builder, By, Key, until } = require('selenium-webdriver');
 
 const screen = {
     width: 1024,
     height: 720
   };
    
-const { Builder, By, Key, until } = require('selenium-webdriver');
-
-
-
 (async () => {
 
   console.log("Iniciando");
