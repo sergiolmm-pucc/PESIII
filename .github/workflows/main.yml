@@ -87,16 +87,20 @@ jobs:
           # Path to the release files          Gravar as fotos na raiz do projeto no docker
           path: /home/runner/work/PESIII/PESIII/*.png
 
-      - name: lista  
-        run: cd tests
-      - name: lista  
-        run: ls -la
-      - name: lista  
-        run: cd funcional
-      - name: lista  
-        run: ls -la
-     
-   
+      - name: fotos da tela 1
+        uses: actions/upload-artifact@v3
+        with:
+          name: Fotos dos testes
+          # Path to the release files          Gravar as fotos na raiz do projeto no docker
+          path: /home/runner/work/PESIII/PESIII/tests/funcional/*.png
+
+      - name: fotos da tela 2
+        uses: actions/upload-artifact@v3
+        with:
+          name: Fotos dos testes
+          # Path to the release files          Gravar as fotos na raiz do projeto no docker
+          path: /home/runner/work/PESIII/PESIII/tests/*.png
+
 
 
 
