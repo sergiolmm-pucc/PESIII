@@ -1,6 +1,6 @@
 const webdriver = require('selenium-webdriver');
 const chrome = require('selenium-webdriver/chrome');
-const { Builder, By, Key, until } = require('selenium-webdriver');
+const { Builder, Browser, By, until } = require('selenium-webdriver');
 
 const screen = {
     width: 1024,
@@ -28,7 +28,7 @@ const screen = {
     // Navegação para a página HTML
     await driver.get('https://billowy-flowery-cousin.glitch.me/MKP');
     
-    await driver.sleep(45000)
+    await driver.sleep(2000)
 	  
     driver.takeScreenshot().then(
             function(image, err) {
