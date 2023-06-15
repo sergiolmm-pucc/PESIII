@@ -11,6 +11,15 @@ const { Builder, By, Key, until } = require('selenium-webdriver');
     // Navegação para a página HTML
     await driver.get('http://localhost:3000/MKP');
 
+    driver.takeScreenshot().then(
+            function(image, err) {
+              require('fs').writeFile('inicio14.png', image, 'base64', function(err) {
+                console.log("erro"+ err);
+              });
+            }
+           );
+
+    
     // Preenchimento dos campos e submissão do formulário
     await driver.findElement(By.name('valorCompra')).sendKeys('100');
     await driver.findElement(By.name('tributosCompra')).sendKeys('50');
@@ -23,6 +32,15 @@ const { Builder, By, Key, until } = require('selenium-webdriver');
     // Aguarda a exibição do resultado
     await driver.wait(until.elementLocated(By.css('.result')), 5000);
     await driver.wait(until.elementLocated(By.css('.result2')), 5000);
+
+
+	   driver.takeScreenshot().then(
+            function(image, err) {
+              require('fs').writeFile('final14.png', image, 'base64', function(err) {
+                console.log("erro"+ err);
+              });
+            }
+           );
 
     // Obtém o valor de markup exibido
     const resultado = await driver.findElement(By.css('.result')).getText();

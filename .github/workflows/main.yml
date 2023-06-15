@@ -85,7 +85,7 @@ jobs:
         with:
           name: Fotos dos testes
           # Path to the release files          Gravar as fotos na raiz do projeto no docker
-          path: /home/runner/work/GCSIC/GCSIC/*.png
+          path: /home/runner/work/PESIII/PESIII/*.png
 
 
 
