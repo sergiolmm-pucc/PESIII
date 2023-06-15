@@ -9,7 +9,9 @@
     "start": "node index.js",
     "test1": "node tests/funcional/button-render.js",
     "test2": "node tests/funcional/grupo1-markup-func.js",
+    "test3": "node tests/funcional/grupo5-calculoINFS-func.js",
     "e2e-test": "start-server-and-test http://localhost:3000/ht test2"
+    
   },
   "repository": {
     "url": "https://glitch.com/edit/#!/glitch-mvp-node"

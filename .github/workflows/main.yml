@@ -75,6 +75,8 @@ jobs:
       - run: npm ci
       - name: Run end to end tests
         run: npm run test2
+      - name: Run test3
+        run: npm run test3
       - name: diretorio
         run: pwd
       - name: lista  
