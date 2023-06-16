@@ -39,7 +39,7 @@ const screen = {
            );
 
     await driver.findElement(By.id('custo')).sendKeys('100');
-    await driver.findElement(By.id('markup')).sendKeys('12');
+    await driver.findElement(By.id('margem')).sendKeys('12');
     await driver
       .findElement(By.id('btnCalcular'))
       .click();
