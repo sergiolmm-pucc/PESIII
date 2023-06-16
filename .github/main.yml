@@ -1,7 +1,7 @@
 
 name: Exemplo da aula de PEDIII - by Slmm
 
-on: [push]
+on: [push, workflow_dispatch]
 #defaults:
 #  run:
 #    shell: bash
