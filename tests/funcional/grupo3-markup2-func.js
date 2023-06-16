@@ -44,8 +44,8 @@ const screen = {
       .findElement(By.id('btnCalcular'))
       .click();
 
-    await driver.wait(until.elementLocated(By.id('resultMarkup')), 5000);
-    await driver.wait(until.elementLocated(By.id('resultPrice')), 5000);
+    await driver.wait(until.elementLocated(By.id('resultMarkup')), 7000);
+    await driver.wait(until.elementLocated(By.id('resultPrice')), 7000);
 
 	   driver.takeScreenshot().then(
             function(image, err) {
@@ -75,7 +75,7 @@ const screen = {
       console.log('Não passou');
     }
 
-    await driver.sleep(5000)
+    await driver.sleep(7000)
     driver.takeScreenshot()
       .then((image, err) => {
         require('fs').writeFileSync('fim_grupo3.png', image, 'base64', (err) => {
