@@ -86,3 +86,4 @@ const { Options } = require('selenium-webdriver/chrome');
     console.error('Teste funcional falhou:', error);
   }
 })();
+
