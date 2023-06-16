@@ -11,7 +11,8 @@
     "test2": "node tests/funcional/grupo1-markup-func.js",
     "test3": "node tests/funcional/grupo5-calculoINFS-func.js",
     "test4": "node tests/funcional/grupo4-calculoINFS-func.js",
-    "e2e-test": "start-server-and-test http://localhost:3000/ht test4"
+    "test5": "node tests/funcional/grupo3-markup2-func.js",
+    "e2e-test": "start-server-and-test http://localhost:3000/ht test2"
   },
   "repository": {
     "url": "https://glitch.com/edit/#!/glitch-mvp-node"
@@ -46,7 +47,7 @@
   },
   "devDependencies": {
     "jest": "^29.5.0",
-    "selenium-webdriver": "^4.10.0",
+    "selenium-webdriver": "^4.9.2",
     "start-server-and-test": "^2.0.0",
     "supertest": "^6.3.3"
   }
