@@ -58,6 +58,8 @@ const screen = {
     const resultPrice = await driver.findElement(By.id('resultPrice')).getText();
     const resultMarkup = await driver.findElement(By.id('resultMarkup')).getText();
 
+    console.log(resultMarkup, resultPrice);
+
     // Verificação do resultado
     if (resultPrice === 'Preço de Venda: R$113.64') {
         console.log('Preço Venda Passou')
