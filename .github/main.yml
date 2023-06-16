@@ -79,6 +79,8 @@ jobs:
         run: npm run test3
       - name: Run test4
         run: npm run test4
+      - name: Run test5 markup2
+        run: npm run test5
       - name: diretorio
         run: pwd
       - name: lista  
