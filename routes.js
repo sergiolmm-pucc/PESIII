@@ -1,5 +1,5 @@
 const express = require("express");
-const calcMarkup = require("./pagesMarkup2/markup2");
+const calcMarkup = require("./pages/Grupo03/markup2");
 const routes = express.Router();
 const INDEX = '/index.html';
 
@@ -16,7 +16,7 @@ routes.get('/MKP', (req, res) => {
 routes.get('/NFVP', (req, res) => res.sendFile('./pages/Grupo02/NF_Venda_Produto.html', { root: __dirname }))
 
 routes.get('/MKP2', (req, res) => {
-    res.sendFile('./pagesMarkup2/markup2.html', { root: __dirname });
+    res.sendFile('./pages/Grupo03/markup2.html', { root: __dirname });
 });
 
 routes.get('/INFS', (req, res) => res.sendFile('./pages/Grupo05/INFS.html', { root: __dirname }))
@@ -25,13 +25,13 @@ routes.get('/INFS2', (req, res) => res.sendFile('./pages/Grupo04/INFS2.html', { 
 
 routes.post('/MKP2', (req, res) => {
     const custo = req.body.custo;
-    const markup = req.body.markup;
+    const margem = req.body.margem;
 
-    if (!custo || !markup) {
-        return res.status(400).json({ error: 'Custo e markup são obrigatórios' });
+    if (!custo || !margem) {
+        return res.status(400).json({ error: 'Custo e margem são obrigatórios' });
     }
-    const precoVenda = calcMarkup(custo, markup);
-    res.json({ precoVenda });
+    const data = calcMarkup(custo, margem);
+    res.json(data);
 });
 
 module.exports = routes;

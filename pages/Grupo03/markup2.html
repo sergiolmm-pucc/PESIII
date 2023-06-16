@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculadora de Markup</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <style>
+    body {
+      padding: 40px;
+      background: linear-gradient(to bottom, #f4d03f, #2ecc71);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-attachment: fixed;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input {
+      width: 200px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+    }
+
+    h2 {
+      margin-top: 30px;
+    }
+
+    p {
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <form id="calculoForm">
+    <div class="container">
+      <h1>Calculadora de Markup</h1>
+
+      <div class="form-group">
+        <label for="custo">Custo do Produto:</label>
+        <input type="text" id="custo" class="form-control" placeholder="Digite o custo">
+      </div>
+
+      <div class="form-group">
+        <label for="margem">Margem de Lucro (%):</label>
+        <input type="text" id="margem" class="form-control" placeholder="Digite a margem de lucro">
+      </div>
+
+      <button class="btn btn-primary" type="submit" class="button" id="btnCalcular">Calcular</button>
+
+      <h2>Resultado:</h2>
+
+      <p>Markup: R$<span id="markupValue"></span></p>
+      <p>Preço de Venda: R$<span id="precoVendaValue"></span></p>
+    </div>
+    <script>
+      const form = document.getElementById("calculoForm");
+      const resultMarkup = document.getElementById("markupValue");
+      const resultPrice = document.getElementById("precoVendaValue");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const custo = document.getElementById("custo").value;
+        const margem = document.getElementById("margem").value;
+
+        const data = {
+          custo: parseFloat(custo),
+          margem: parseFloat(margem),
+        };
+
+        fetch("/MKP2", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        })
+          .then((response) => response.json())
+          .then(({ precoVenda, markup }) => {
+            resultPrice.textContent = precoVenda.toFixed(2);
+            resultMarkup.textContent = markup.toFixed(2)
+          })
+          .catch((error) => {
+            console.error(error);
+            resultadoDiv.textContent = "Erro ao calcular o preço de venda e markup.";
+          });
+      });
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
