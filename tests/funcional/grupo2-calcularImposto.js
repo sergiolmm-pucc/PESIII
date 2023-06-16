@@ -25,6 +25,10 @@ const { Options } = require('selenium-webdriver/chrome');
     // Navegação para a página HTML
     await driver.get('https://billowy-flowery-cousin.glitch.me/NFVP');
 
+    // Esperar o site carregar completamente
+    await driver.wait(until.elementLocated(By.id('valorTributo')), 10000);
+    await driver.wait(until.elementIsVisible(driver.findElement(By.id('valorTributo'))), 10000);
+
     // Verificação dos botões de impostos
     const csllButton = await driver.findElement(By.id('CSLL'));
     const irpjButton = await driver.findElement(By.id('IRPJ'));
@@ -50,7 +54,7 @@ const { Options } = require('selenium-webdriver/chrome');
 
     // Verificação do cálculo de imposto
     const valorTributoInput = await driver.findElement(By.id('valorTributo'));
-    await valorTributoInput.sendKeys('100');
+    await valorTributoInput.sendKeys('1000');
 
     const csllValue = await driver.executeScript('return calcularImposto(0.10)');
     console.log('Resultado do cálculo de CSLL:', csllValue);
@@ -71,7 +75,7 @@ const { Options } = require('selenium-webdriver/chrome');
 
     // Captura de tela final
     await driver.takeScreenshot().then((image, err) => {
-      require('fs').writeFile('final.png', image, 'base64', function (err) {
+      require('fs').writeFile('fim-grupo2.png', image, 'base64', function (err) {
         console.log('Erro' + err);
       });
     });
