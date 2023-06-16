@@ -62,17 +62,16 @@ const screen = {
     if (resultPrice === 'Preço de Venda: R$113.64') {
         console.log('Preço Venda Passou')
     }
-    else if(resultMarkup === 'Markup: R$13.64') {
+
+    if(resultMarkup === 'Markup: R$13.64') {
         console.log('Markup Passou')
     }
-    else if (resultPrice !== 'Preço de Venda: R$113.64') {
+
+    if (resultPrice !== 'Preço de Venda: R$113.64') {
         console.log('Preço Venda Não Passou')
     }
-    else if(resultMarkup !== 'Markup: R$13.64') {
+    if(resultMarkup !== 'Markup: R$13.64') {
         console.log('Markup Não Passou')
-    }
-    else {
-      console.log('Não passou');
     }
 
     await driver.sleep(7000)
