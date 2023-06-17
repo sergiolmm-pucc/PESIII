@@ -24,11 +24,22 @@ const { Options } = require('selenium-webdriver/chrome');
 
     // Navegação para a página HTML
     await driver.get('https://billowy-flowery-cousin.glitch.me/NFVP');
+    // Wait for 5 secs to let the dynamic content to load
+    await driver.sleep(5000);
+
 
     // Esperar o site carregar completamente
     await driver.wait(until.elementLocated(By.id('valorTributo')), 10000);
     await driver.wait(until.elementIsVisible(driver.findElement(By.id('valorTributo'))), 10000);
 
+   // Captura de tela final
+    await driver.takeScreenshot().then((image, err) => {
+      require('fs').writeFile('inicio-grupo2.png', image, 'base64', function (err) {
+        console.log('Erro' + err);
+      });
+    });
+
+    
     // Verificação dos botões de impostos
     const csllButton = await driver.findElement(By.id('CSLL'));
     const irpjButton = await driver.findElement(By.id('IRPJ'));
