@@ -12,6 +12,7 @@
     "test3": "node tests/funcional/grupo5-calculoINFS-func.js",
     "test4": "node tests/funcional/grupo4-calculoINFS-func.js",
     "test5": "node tests/funcional/grupo3-markup2-func.js",
+    "CalcImpG2": "node tests/funcional/grupo2-calcularImposto.js",
     "e2e-test": "start-server-and-test http://localhost:3000/ht test2"
   },
   "repository": {
