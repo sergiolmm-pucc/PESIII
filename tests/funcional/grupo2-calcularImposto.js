@@ -60,16 +60,23 @@ const { Options } = require('selenium-webdriver/chrome');
       console.log('Falhou: Botões de impostos não estão visíveis');
     }
 
-    // Clique no botão CSLL
-    await csllButton.click();
-/*
+
     // Verificação do cálculo de imposto
     valorTributoInput = await driver.findElement(By.id('valorTributo'));
     await valorTributoInput.sendKeys('1000');
 
+
+    // Clique no botão CSLL
+    await csllButton.click();
+    
+    await driver.sleep(5000);
+/*
     const csllValue = await driver.executeScript('return calcularImposto(0.10)');
     console.log('Resultado do cálculo de CSLL:', csllValue);
 
+
+
+    
     // Verificação do destaque dos botões
     const buttons = await driver.findElements(By.className('button'));
 
