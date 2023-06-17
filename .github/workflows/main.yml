@@ -81,6 +81,8 @@ jobs:
         run: npm run test4
       - name: Run test5 markup2
         run: npm run test5
+      - name: Run teste de Calculo de imposto
+        run: npm run CalcImpG2
       - name: diretorio
         run: pwd
       - name: lista  
