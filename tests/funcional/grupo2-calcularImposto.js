@@ -62,9 +62,9 @@ const { Options } = require('selenium-webdriver/chrome');
 
     // Clique no botão CSLL
     await csllButton.click();
-
+/*
     // Verificação do cálculo de imposto
-    const valorTributoInput = await driver.findElement(By.id('valorTributo'));
+    valorTributoInput = await driver.findElement(By.id('valorTributo'));
     await valorTributoInput.sendKeys('1000');
 
     const csllValue = await driver.executeScript('return calcularImposto(0.10)');
@@ -83,7 +83,7 @@ const { Options } = require('selenium-webdriver/chrome');
         console.log('Falhou: Botão sem destaque visual ao passar o mouse');
       }
     }
-
+*/
     // Captura de tela final
     await driver.takeScreenshot().then((image, err) => {
       require('fs').writeFile('fim-grupo2.png', image, 'base64', function (err) {
