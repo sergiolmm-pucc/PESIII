@@ -24,22 +24,11 @@ const { Options } = require('selenium-webdriver/chrome');
 
     // Navegação para a página HTML
     await driver.get('https://billowy-flowery-cousin.glitch.me/NFVP');
-    // Wait for 5 secs to let the dynamic content to load
-    await driver.sleep(5000);
-
 
     // Esperar o site carregar completamente
     await driver.wait(until.elementLocated(By.id('valorTributo')), 10000);
     await driver.wait(until.elementIsVisible(driver.findElement(By.id('valorTributo'))), 10000);
 
-   // Captura de tela final
-    await driver.takeScreenshot().then((image, err) => {
-      require('fs').writeFile('inicio-grupo2.png', image, 'base64', function (err) {
-        console.log('Erro' + err);
-      });
-    });
-
-    
     // Verificação dos botões de impostos
     const csllButton = await driver.findElement(By.id('CSLL'));
     const irpjButton = await driver.findElement(By.id('IRPJ'));
@@ -60,23 +49,16 @@ const { Options } = require('selenium-webdriver/chrome');
       console.log('Falhou: Botões de impostos não estão visíveis');
     }
 
-
-    // Verificação do cálculo de imposto
-    valorTributoInput = await driver.findElement(By.id('valorTributo'));
-    await valorTributoInput.sendKeys('1000');
-
-
     // Clique no botão CSLL
     await csllButton.click();
-    
-    await driver.sleep(5000);
-/*
+
+    // Verificação do cálculo de imposto
+    const valorTributoInput = await driver.findElement(By.id('valorTributo'));
+    await valorTributoInput.sendKeys('1000');
+
     const csllValue = await driver.executeScript('return calcularImposto(0.10)');
     console.log('Resultado do cálculo de CSLL:', csllValue);
 
-
-
-    
     // Verificação do destaque dos botões
     const buttons = await driver.findElements(By.className('button'));
 
@@ -90,7 +72,7 @@ const { Options } = require('selenium-webdriver/chrome');
         console.log('Falhou: Botão sem destaque visual ao passar o mouse');
       }
     }
-*/
+
     // Captura de tela final
     await driver.takeScreenshot().then((image, err) => {
       require('fs').writeFile('fim-grupo2.png', image, 'base64', function (err) {

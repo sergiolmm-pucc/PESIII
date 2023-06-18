@@ -5,51 +5,49 @@ const calcularImposto = require("../pages/Grupo02/calcularImposto");
 const dom = new JSDOM();
 global.document = dom.window.document;
 
-// Define uma função vazia para mostrarMensagemLabel
-function mostrarMensagemLabel(mensagem) {
-  const mensagemLabel = document.createElement('label');
-  mensagemLabel.id = 'mensagemLabel';
-  mensagemLabel.textContent = mensagem;
-  document.body.appendChild(mensagemLabel);
-}
-
 // Teste da função calcularImposto
 describe("calcularImposto", () => {
+  let alertMessage;
+
+  // Substitui a função alert para capturar a mensagem exibida
   beforeEach(() => {
-    // Limpa o conteúdo do body antes de cada teste
-    document.body.innerHTML = '';
+    global.alert = (message) => {
+      alertMessage = message;
+    };
   });
 
-  it("deve exibir uma mensagem se o valorTributo estiver vazio", () => {
+  // Restaura a função alert original após cada teste
+  afterEach(() => {
+    global.alert = undefined;
+  });
+
+  it("deve exibir um alerta se o valorTributo estiver vazio", () => {
     // Simula o elemento com ID "valorTributo" no documento
     document.getElementById = jest.fn().mockReturnValue({
       value: "",
     });
 
     calcularImposto(0.10);
-    const mensagemLabel = document.getElementById('mensagemLabel');
-    expect(mensagemLabel.textContent).toBe("Por favor, digite um valor no campo de tributo.");
+    expect(alertMessage).toBe("Por favor, digite um valor no campo de tributo.");
   });
 
-  it("deve exibir uma mensagem se o valorTributo não for um número válido", () => {
+  it("deve exibir um alerta se o valorTributo não for um número válido", () => {
     // Simula o elemento com ID "valorTributo" no documento
     document.getElementById = jest.fn().mockReturnValue({
       value: "abc",
     });
 
     calcularImposto(0.10);
-    const mensagemLabel = document.getElementById('mensagemLabel');
-    expect(mensagemLabel.textContent).toBe("Por favor, digite um valor numérico válido.");
+    expect(alertMessage).toBe("Por favor, digite um valor numérico válido.");
   });
 
-  it("deve exibir uma mensagem se o valorTributo for negativo", () => {
+  it("deve exibir um alerta se o valorTributo for negativo", () => {
     // Simula o elemento com ID "valorTributo" no documento
     document.getElementById = jest.fn().mockReturnValue({
       value: "-10",
     });
 
     calcularImposto(0.10);
-    const mensagemLabel = document.getElementById('mensagemLabel');
-    expect(mensagemLabel.textContent).toBe("Por favor, digite um valor positivo no campo de tributo.");
+    expect(alertMessage).toBe("Por favor, digite um valor positivo no campo de tributo.");
   });
 });
