@@ -5,20 +5,14 @@ const calcularImposto = require("../pages/Grupo02/calcularImposto");
 const dom = new JSDOM();
 global.document = dom.window.document;
 
+// Cria uma função vazia para mostrarMensagemLabel inicialmente
+global.mostrarMensagemLabel = jest.fn();
+
 // Teste da função calcularImposto
 describe("calcularImposto", () => {
-  let mensagemLabel;
-
-  // Substitui a função mostrarMensagemLabel para capturar a mensagem exibida
   beforeEach(() => {
-    global.mostrarMensagemLabel = (mensagem) => {
-      mensagemLabel = mensagem;
-    };
-  });
-
-  // Restaura a função mostrarMensagemLabel original após cada teste
-  afterEach(() => {
-    global.mostrarMensagemLabel = undefined;
+    // Limpa o mock da função mostrarMensagemLabel antes de cada teste
+    global.mostrarMensagemLabel.mockClear();
   });
 
   it("deve exibir uma mensagem se o valorTributo estiver vazio", () => {
@@ -28,7 +22,7 @@ describe("calcularImposto", () => {
     });
 
     calcularImposto(0.10);
-    expect(mensagemLabel).toBe("Por favor, digite um valor no campo de tributo.");
+    expect(global.mostrarMensagemLabel).toHaveBeenCalledWith("Por favor, digite um valor no campo de tributo.");
   });
 
   it("deve exibir uma mensagem se o valorTributo não for um número válido", () => {
@@ -38,7 +32,7 @@ describe("calcularImposto", () => {
     });
 
     calcularImposto(0.10);
-    expect(mensagemLabel).toBe("Por favor, digite um valor numérico válido.");
+    expect(global.mostrarMensagemLabel).toHaveBeenCalledWith("Por favor, digite um valor numérico válido.");
   });
 
   it("deve exibir uma mensagem se o valorTributo for negativo", () => {
@@ -48,6 +42,6 @@ describe("calcularImposto", () => {
     });
 
     calcularImposto(0.10);
-    expect(mensagemLabel).toBe("Por favor, digite um valor positivo no campo de tributo.");
+    expect(global.mostrarMensagemLabel).toHaveBeenCalledWith("Por favor, digite um valor positivo no campo de tributo.");
   });
 });
