@@ -5,14 +5,19 @@ const calcularImposto = require("../pages/Grupo02/calcularImposto");
 const dom = new JSDOM();
 global.document = dom.window.document;
 
-// Cria uma função vazia para mostrarMensagemLabel inicialmente
-global.mostrarMensagemLabel = jest.fn();
+// Define uma função vazia para mostrarMensagemLabel
+function mostrarMensagemLabel(mensagem) {
+  const mensagemLabel = document.createElement('label');
+  mensagemLabel.id = 'mensagemLabel';
+  mensagemLabel.textContent = mensagem;
+  document.body.appendChild(mensagemLabel);
+}
 
 // Teste da função calcularImposto
 describe("calcularImposto", () => {
   beforeEach(() => {
-    // Limpa o mock da função mostrarMensagemLabel antes de cada teste
-    global.mostrarMensagemLabel.mockClear();
+    // Limpa o conteúdo do body antes de cada teste
+    document.body.innerHTML = '';
   });
 
   it("deve exibir uma mensagem se o valorTributo estiver vazio", () => {
@@ -22,7 +27,8 @@ describe("calcularImposto", () => {
     });
 
     calcularImposto(0.10);
-    expect(global.mostrarMensagemLabel).toHaveBeenCalledWith("Por favor, digite um valor no campo de tributo.");
+    const mensagemLabel = document.getElementById('mensagemLabel');
+    expect(mensagemLabel.textContent).toBe("Por favor, digite um valor no campo de tributo.");
   });
 
   it("deve exibir uma mensagem se o valorTributo não for um número válido", () => {
@@ -32,7 +38,8 @@ describe("calcularImposto", () => {
     });
 
     calcularImposto(0.10);
-    expect(global.mostrarMensagemLabel).toHaveBeenCalledWith("Por favor, digite um valor numérico válido.");
+    const mensagemLabel = document.getElementById('mensagemLabel');
+    expect(mensagemLabel.textContent).toBe("Por favor, digite um valor numérico válido.");
   });
 
   it("deve exibir uma mensagem se o valorTributo for negativo", () => {
@@ -42,6 +49,7 @@ describe("calcularImposto", () => {
     });
 
     calcularImposto(0.10);
-    expect(global.mostrarMensagemLabel).toHaveBeenCalledWith("Por favor, digite um valor positivo no campo de tributo.");
+    const mensagemLabel = document.getElementById('mensagemLabel');
+    expect(mensagemLabel.textContent).toBe("Por favor, digite um valor positivo no campo de tributo.");
   });
 });
