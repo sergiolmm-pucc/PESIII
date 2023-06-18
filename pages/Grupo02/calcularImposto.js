@@ -37,5 +37,3 @@ function mostrarMensagemLabel(mensagem) {
     mensagemLabel.innerHTML = mensagem;
     mensagemLabel.style.display = "block";
 }
-
-module.exports = calcularImposto;

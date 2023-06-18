@@ -58,38 +58,38 @@
     </style>
 </head>
 <body>
-    <div>
-        <h1>Cálculo de Impostos – NF venda produto</h1>
-        <br>
-        <br>
-        <table>
+    <<div>
+      <h1>Cálculo de Impostos – NF venda produto</h1>
+      <br>
+      <br>
+      <table>
           <tr>
-            <td id="CSLL">
-              <button class="button" onclick="calcularImposto(0.10)">CSLL</button>
-            </td>
-            <td id="IRPJ">
-              <button class="button" onclick="calcularImposto(0.15)">IRPJ</button>
-            </td>
-            <td id="COFINS">
-              <button class="button" onclick="calcularImposto(0.05)">COFINS</button>
-            </td>
-            <td id="PIS">
-              <button class="button" onclick="calcularImposto(0.02)">PIS</button>
-            </td>
-            <td id="ISS">
-              <button class="button" onclick="calcularImposto(0.08)">ISS</button>
-            </td>
+              <td id="CSLL">
+                  <button class="button" onclick="calcularImposto(0.10)">CSLL</button>
+              </td>
+              <td id="IRPJ">
+                  <button class="button" onclick="calcularImposto(0.15)">IRPJ</button>
+              </td>
+              <td id="COFINS">
+                  <button class="button" onclick="calcularImposto(0.05)">COFINS</button>
+              </td>
+              <td id="PIS">
+                  <button class="button" onclick="calcularImposto(0.02)">PIS</button>
+              </td>
+              <td id="ISS">
+                  <button class="button" onclick="calcularImposto(0.08)">ISS</button>
+              </td>
           </tr>
-        </table>
-        <br>
-        <br>
-        <div id="calculo">
+      </table>
+      <br>
+      <br>
+      <div id="calculo">
           <input type="number" id="valorTributo" min="1" step="any" placeholder="Digite o valor do tributo" class="input-custom">
           <br>
-        </div>
-        
-        
-    </div>
+          <label id="mensagemLabel" class="mensagem-label"></label>
+      </div>
+  </div>
+  
     <script src="../Grupo02/calcularImposto.js"></script>
 </body>
 </html>
