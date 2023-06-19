@@ -1,53 +1,17 @@
-const { JSDOM } = require("jsdom");
-const calcularImposto = require("../pages/Grupo02/calcularImposto");
 
-// Cria uma instância do JSDOM para simular o ambiente do navegador
-const dom = new JSDOM();
-global.document = dom.window.document;
+const  calcularImposto  = require("../pages/Grupo02/calcularImposto")
 
-// Teste da função calcularImposto
-describe("calcularImposto", () => {
-  let alertMessage;
-
-  // Substitui a função alert para capturar a mensagem exibida
-  beforeEach(() => {
-    global.alert = (message) => {
-      alertMessage = message;
-    };
-  });
-
-  // Restaura a função alert original após cada teste
-  afterEach(() => {
-    global.alert = undefined;
-  });
-
-  it("deve exibir um alerta se o valorTributo estiver vazio", () => {
-    // Simula o elemento com ID "valorTributo" no documento
-    document.getElementById = jest.fn().mockReturnValue({
-      value: "",
+describe('calc tax function',()=>{
+    it('empty value',()=>{
+        expect(calcularImposto('',0.10)).toBe("Por favor digite numeros validos.")
     });
-
-    calcularImposto(0.10);
-    expect(alertMessage).toBe("Por favor, digite um valor no campo de tributo.");
-  });
-
-  it("deve exibir um alerta se o valorTributo não for um número válido", () => {
-    // Simula o elemento com ID "valorTributo" no documento
-    document.getElementById = jest.fn().mockReturnValue({
-      value: "abc",
+    it('NaN value',()=>{
+        expect(calcularImposto(NaN,0.15)).toBe("Por favor, digite um valor numérico válido.")
     });
-
-    calcularImposto(0.10);
-    expect(alertMessage).toBe("Por favor, digite um valor numérico válido.");
-  });
-
-  it("deve exibir um alerta se o valorTributo for negativo", () => {
-    // Simula o elemento com ID "valorTributo" no documento
-    document.getElementById = jest.fn().mockReturnValue({
-      value: "-10",
-    });
-
-    calcularImposto(0.10);
-    expect(alertMessage).toBe("Por favor, digite um valor positivo no campo de tributo.");
-  });
-});
+    it('neagtive value',()=>{
+        expect(calcularImposto(-10,0.15)).toBe("Por favor, digite um valor positivo no campo de tributo.")
+    })
+    it('correct values',()=>{
+        expect(calcularImposto(10,0.10)).toBe(1)
+    })
+})

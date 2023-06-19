@@ -54,6 +54,11 @@
         text-align: center;
         margin-top: 20px;
       }
+      .container {
+        width: 50%;
+        margin: 0 auto;
+        text-align: center;
+      }
 
     </style>
 </head>
@@ -65,19 +70,19 @@
         <table>
           <tr>
             <td id="CSLL">
-              <button class="button" onclick="calcularImposto(0.10)">CSLL</button>
+              <button class="button" onclick="escolheImposto(1)">CSLL</button>
             </td>
             <td id="IRPJ">
-              <button class="button" onclick="calcularImposto(0.15)">IRPJ</button>
+              <button class="button" onclick="escolheImposto(2)">IRPJ</button>
             </td>
             <td id="COFINS">
-              <button class="button" onclick="calcularImposto(0.05)">COFINS</button>
+              <button class="button" onclick="escolheImposto(3)">COFINS</button>
             </td>
             <td id="PIS">
-              <button class="button" onclick="calcularImposto(0.02)">PIS</button>
+              <button class="button" onclick="escolheImposto(4)">PIS</button>
             </td>
             <td id="ISS">
-              <button class="button" onclick="calcularImposto(0.08)">ISS</button>
+              <button class="button" onclick="escolheImposto(5)">ISS</button>
             </td>
           </tr>
         </table>
@@ -87,7 +92,9 @@
           <input type="number" id="valorTributo" min="1" step="any" placeholder="Digite o valor do tributo" class="input-custom">
           <br>
         </div>
-        
+        <div class="container">
+          <h3 id="text-result"></h3>
+        </div>
         
     </div>
     <script src="../Grupo02/calcularImposto.js"></script>
